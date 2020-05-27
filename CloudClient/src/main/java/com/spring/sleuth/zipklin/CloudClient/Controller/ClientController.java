@@ -19,8 +19,12 @@ public class ClientController {
 	
 	@GetMapping(value = "/client")
     public String hello() {
-		log.info("Reached Server");
-        return "Hi! This is Sleuth-Zipkin Server";
+		
+		log.info("Before Calling the Seluth-Zipkin Server");
+	    String response = restTemplate.getForObject("http://localhost:8081/rest/server", String.class);
+	    log.info("After Calling the Seluth-Zipkin Server");
+
+	        return response;
     }
 	
 }
