@@ -17,7 +17,7 @@ public class ClientController {
 	@Autowired
 	private RestTemplate restTemplate;
 	
-	@GetMapping(value = "/clinet")
+	@GetMapping(value = "/client")
     public String hello() {
 		log.info("Reached Server");
         return "Hi! This is Sleuth-Zipkin Server";
